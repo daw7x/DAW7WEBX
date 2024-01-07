@@ -4,7 +4,7 @@ from urllib.parse import quote
 print(f"DAW OSINT TOOL\n")
 print(f"Coded by Mohammed Suliman - Instagram: 218XL\n")
 # URL and headers from the request
-url = "http://nec.gov.ly/SRS/SRSSearchForm.aspx"
+url = "https://nec.gov.ly/SRS/SRSSearchForm.aspx"
 headers = {
     "Host": "nec.gov.ly",
     "Cookie": "SRSUserSelectedSchoolId_3097401=UserId=3097401&SchoolId=30974&academicYear=2021&municipalityId=1140&educationAreaId=60001&yearLevel=12&specializationId=1210; ASP.NET_SessionId=wl0zuwm4u1kkxjs0g4lt5h25; NecSRSCookie001=02995ef437-e61c-41GNvGFqXJ6C0aR7bsI4vnnkxZu8A6HMDv5hphwhAlf8u4mDfI8djJPA_ZthKew0HdIPA",
@@ -18,11 +18,11 @@ headers = {
     "X-Microsoftajax": "Delta=true",
     "Sec-Ch-Ua-Platform": "\"Linux\"",
     "Accept": "*/*",
-    "Origin": "http://nec.gov.ly",
+    "Origin": "https://nec.gov.ly",
     "Sec-Fetch-Site": "same-origin",
     "Sec-Fetch-Mode": "cors",
     "Sec-Fetch-Dest": "empty",
-    "Referer": "http://nec.gov.ly/SRS/SRSSearchForm.aspx",
+    "Referer": "https://nec.gov.ly/SRS/SRSSearchForm.aspx",
     "Accept-Encoding": "gzip, deflate, br",
     "Accept-Language": "en-US,en;q=0.9",
     "Connection": "close"
