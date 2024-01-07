@@ -1,8 +1,6 @@
 import requests
 from bs4 import BeautifulSoup
 from urllib.parse import quote
-import urllib3
-urllib3.disable_warnings(urllib3.exceptions.InsecureRequestWarning)
 
 print(f"DAW OSINT TOOL\n")
 print(f"Coded by Mohammed Suliman - Instagram: 218XL\n")
