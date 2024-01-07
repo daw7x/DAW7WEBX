@@ -8,7 +8,7 @@ print(f"Coded by Mohammed Suliman - Instagram: 218XL\n")
 url = "https://nec.gov.ly/SRS/SRSSearchForm.aspx"
 headers = {
     "Host": "nec.gov.ly",
-    "Cookie": "SRSUserSelectedSchoolId_3097401=UserId=3097401&SchoolId=30974&academicYear=2021&municipalityId=1140&educationAreaId=60001&yearLevel=12&specializationId=1210; ASP.NET_SessionId=yqitkmqcnyqv1vofuixdpf3k; NecSRSCookie001=02995ef437-e61c-41qWQlYpxzo8Wd-3jKv6WmbmyKGUfFMiR9m97IuHp505R_4Y7Vk4z8ObnsWH4p_K5sgZE",
+    "Cookie": "SRSUserSelectedSchoolId_3097401=UserId=3097401&SchoolId=30974&academicYear=2021&municipalityId=1140&educationAreaId=60001&yearLevel=12&specializationId=1210; ASP.NET_SessionId=yqitkmqcnyqv1vofuixdpf3k; NecSRSCookie001=2995ef437-e61c-41qWQlYpxzo8Wd-3jKv6WmbmyKGUfFMiR9m97IuHp505R_4Y7Vk4z8ObnsWH4p_K5sgZE",
     "Content-Length": "7264",
     "Sec-Ch-Ua": "\"Chromium\";v=\"117\", \"Not;A=Brand\";v=\"8\"",
     "Sec-Ch-Ua-Mobile": "?0",
