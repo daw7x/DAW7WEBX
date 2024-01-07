@@ -59,7 +59,6 @@ common_payload = {
     "__ASYNCPOST": "true",
     "ctl00$MainContent$ButtonSearchStart": "%D8%A7%D9%84%D8%A8%D8%AF%D8%A1%20%D9%81%D9%8A%20%D8%A7%D9%84%D8%A8%D8%AD%D8%AB",
 }
-
 # Initialize a set to store unique data rows
 unique_data_rows = set()
 
@@ -72,7 +71,7 @@ for academic_year in range(2007, 2024):
     encoded_payload = "&".join([f"{key}={value}" for key, value in common_payload.items()])
   
     # Send the request
-    response = requests.post(url, headers=headers, data=encoded_payload, verify=True)
+    response = requests.post(url, headers=headers, data=encoded_payload, verify=False)
 
     # Parse the HTML content using BeautifulSoup
     soup = BeautifulSoup(response.text, 'html.parser')
