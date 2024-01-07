@@ -6,26 +6,26 @@ print(f"Coded by Mohammed Suliman - Instagram: 218XL\n")
 # URL and headers from the request
 url = "https://nec.gov.ly/SRS/SRSSearchForm.aspx"
 headers = {
-   "Accept": "*/*",
+    "Host": "nec.gov.ly",
+    "Cookie": "SRSUserSelectedSchoolId_3097401=UserId=3097401&SchoolId=30974&academicYear=2021&municipalityId=1140&educationAreaId=60001&yearLevel=12&specializationId=1210; ASP.NET_SessionId=wl0zuwm4u1kkxjs0g4lt5h25; NecSRSCookie001=02995ef437-e61c-41GNvGFqXJ6C0aR7bsI4vnnkxZu8A6HMDv5hphwhAlf8u4mDfI8djJPA_ZthKew0HdIPA",
+    "Content-Length": "7264",
+    "Sec-Ch-Ua": "\"Chromium\";v=\"117\", \"Not;A=Brand\";v=\"8\"",
+    "Sec-Ch-Ua-Mobile": "?0",
+    "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/117.0.5938.132 Safari/537.36",
+    "Content-Type": "application/x-www-form-urlencoded; charset=UTF-8",
+    "Cache-Control": "no-cache",
+    "X-Requested-With": "XMLHttpRequest",
+    "X-Microsoftajax": "Delta=true",
+    "Sec-Ch-Ua-Platform": "\"Linux\"",
+    "Accept": "*/*",
+    "Origin": "https://nec.gov.ly",
+    "Sec-Fetch-Site": "same-origin",
+    "Sec-Fetch-Mode": "cors",
+    "Sec-Fetch-Dest": "empty",
+    "Referer": "https://nec.gov.ly/SRS/SRSSearchForm.aspx",
     "Accept-Encoding": "gzip, deflate, br",
     "Accept-Language": "en-US,en;q=0.9",
-    "Cache-Control": "no-cache",
-    "Connection": "keep-alive",
-    "Content-Length": "6823",
-    "Content-Type": "application/x-www-form-urlencoded; charset=UTF-8",
-    "Cookie": "ASP.NET_SessionId=qdbkcdtd0fagbowgqnmi2g0j; NecSRSCookie001=02995ef437-e61c-41Q2VYLt1qbnkFtc58sig7L5vi7GXSjLVoSpt7L4Ew-T6olrlNzQENTAed1uJuPEIL9Nk",
-    "Host": "nec.gov.ly",
-    "Origin": "https://nec.gov.ly",
-    "Referer": "https://nec.gov.ly/SRS/SRSSearchForm.aspx",
-    "Sec-Ch-Ua": "\"Chromium\";v=\"118\", \"Google Chrome\";v=\"118\", \"Not=A?Brand\";v=\"99\"",
-    "Sec-Ch-Ua-Mobile": "?0",
-    "Sec-Ch-Ua-Platform": "\"Linux\"",
-    "Sec-Fetch-Dest": "empty",
-    "Sec-Fetch-Mode": "cors",
-    "Sec-Fetch-Site": "same-origin",
-    "User-Agent": "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/118.0.0.0 Safari/537.36",
-    "X-Microsoftajax": "Delta=true",
-    "X-Requested-With": "XMLHttpRequest",
+    "Connection": "close"
 }
 
 # User input for first name and full name
@@ -72,7 +72,7 @@ for academic_year in range(2007, 2024):
     encoded_payload = "&".join([f"{key}={value}" for key, value in common_payload.items()])
 
     # Send the request
-    response = requests.post(url, headers=headers, data=encoded_payload)
+    response = requests.post(url, headers=headers, data=encoded_payload, verify=False)
 
     # Parse the HTML content using BeautifulSoup
     soup = BeautifulSoup(response.text, 'html.parser')
