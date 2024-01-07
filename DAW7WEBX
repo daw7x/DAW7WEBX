@@ -3,7 +3,6 @@ from bs4 import BeautifulSoup
 from urllib.parse import quote
 print(f"DAW OSINT TOOL\n")
 print(f"Coded by Mohammed Suliman - Instagram: 218XL\n")
-
 # URL and headers from the request
 url = "https://nec.gov.ly/SRS/SRSSearchForm.aspx"
 headers = {
@@ -73,7 +72,7 @@ for academic_year in range(2007, 2024):
     encoded_payload = "&".join([f"{key}={value}" for key, value in common_payload.items()])
   
     # Send the request
-    response = requests.post(url, headers=headers, data=encoded_payload, verify=False)
+    response = requests.post(url, headers=headers, data=encoded_payload, verify=True)
 
     # Parse the HTML content using BeautifulSoup
     soup = BeautifulSoup(response.text, 'html.parser')
