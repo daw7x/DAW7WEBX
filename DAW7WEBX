@@ -4,8 +4,10 @@ from bs4 import BeautifulSoup
 from urllib.parse import quote
 print(f"DAW OSINT TOOL\n")
 print(f"Coded by Mohammed Suliman - Instagram: 218XL\n")
+
 # Suppress only the InsecureRequestWarning
 requests.packages.urllib3.disable_warnings(InsecureRequestWarning)
+
 # URL and headers from the request
 url = "https://nec.gov.ly/SRS/SRSSearchForm.aspx"
 headers = {
@@ -62,6 +64,10 @@ common_payload = {
     "__ASYNCPOST": "true",
     "ctl00$MainContent$ButtonSearchStart": "%D8%A7%D9%84%D8%A8%D8%AF%D8%A1%20%D9%81%D9%8A%20%D8%A7%D9%84%D8%A8%D8%AD%D8%AB",
 }
+# Create a custom SSL context with verify set to False
+ssl_context = requests.packages.urllib3.create_urllib3_context()
+ssl_context.verify_mode = requests.packages.urllib3.contrib.pyopenssl.OpenSSL.SSL.VERIFY_NONE
+
 
 # Initialize a set to store unique data rows
 unique_data_rows = set()
@@ -75,7 +81,7 @@ for academic_year in range(2007, 2024):
     encoded_payload = "&".join([f"{key}={value}" for key, value in common_payload.items()])
 
     # Send the request
-    response = requests.post(url, headers=headers, data=encoded_payload, verify=False)
+    response = requests.post(url, headers=headers, data=encoded_payload, verify=False, context=ssl_context)
 
     # Parse the HTML content using BeautifulSoup
     soup = BeautifulSoup(response.text, 'html.parser')
