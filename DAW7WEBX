@@ -6,9 +6,8 @@ print(f"Coded by Mohammed Suliman - Instagram: 218XL\n")
 # URL and headers from the request
 url = "http://nec.gov.ly/SRS/SRSSearchForm.aspx"
 headers = {
-   "Host": "nec.gov.ly",
-    "Cookie": "SRSUserSelectedSchoolId_3097401=UserId=3097401&SchoolId=30974&academicYear=2021&municipalityId=1140&educationAreaId=60001&yearLevel=12&specializationId=1210; ASP.NET_SessionId=wl0zuwm4u1kkxjs0g4lt5h25; NecSRSCookie001=02995ef437-e61c-41GNvGFqXJ6C0aR7bsI4vnnkxZu8A6HMDv5hphwhAlf8u4mDfI8djJPA_ZthKew0HdIPA
-",
+    "Host": "nec.gov.ly",
+    "Cookie": "SRSUserSelectedSchoolId_3097401=UserId=3097401&SchoolId=30974&academicYear=2021&municipalityId=1140&educationAreaId=60001&yearLevel=12&specializationId=1210; ASP.NET_SessionId=wl0zuwm4u1kkxjs0g4lt5h25; NecSRSCookie001=02995ef437-e61c-41GNvGFqXJ6C0aR7bsI4vnnkxZu8A6HMDv5hphwhAlf8u4mDfI8djJPA_ZthKew0HdIPA",
     "Content-Length": "7264",
     "Sec-Ch-Ua": "\"Chromium\";v=\"117\", \"Not;A=Brand\";v=\"8\"",
     "Sec-Ch-Ua-Mobile": "?0",
@@ -91,7 +90,7 @@ for academic_year in range(2007, 2024):
         # Extract and print the data rows from the table
         for row in table.find_all('tr', {'style': 'background-color:#F7F7DE;'}):
             data = [td.text.strip() for td in row.find_all('td')]
-            
+
             # Check if the current data row is unique
             if tuple(data) not in unique_data_rows:
                 unique_data_rows.add(tuple(data))
