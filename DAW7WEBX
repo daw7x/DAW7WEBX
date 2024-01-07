@@ -76,13 +76,13 @@ for academic_year in range(2007, 2024):
 
     # Encode the updated payload to be sent in the request
     encoded_payload = "&".join([f"{key}={value}" for key, value in common_payload.items()])
-    # Create a custom SSL context with verify set to False
-    ssl_context = ssl.create_default_context()
-    ssl_context.check_hostname = False
-    ssl_context.verify_mode = ssl.CERT_NONE
+   # Create a custom SSL context with verify set to False
+ssl_context = ssl.create_default_context()
+ssl_context.check_hostname = False
+ssl_context.verify_mode = ssl.CERT_NONE
 
     # Send the request
-    response = requests.post(url, headers=headers, data=encoded_payload, verify=False, context=ssl_context)
+    response = requests.post(url, headers=headers, data=encoded_payload, verify=False, ssl_context=ssl_context)
 
     # Parse the HTML content using BeautifulSoup
     soup = BeautifulSoup(response.text, 'html.parser')
