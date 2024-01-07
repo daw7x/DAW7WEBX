@@ -1,4 +1,5 @@
 import requests
+import ssl
 from requests.packages.urllib3.exceptions import InsecureRequestWarning
 from bs4 import BeautifulSoup
 from urllib.parse import quote
