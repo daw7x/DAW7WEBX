@@ -1,14 +1,53 @@
+# -*- coding: utf-8 -*-
 import requests
+from os import system, name
 from bs4 import BeautifulSoup
 from urllib.parse import quote
+import urllib3
+import time
+from colorama import Fore, Style, init
+serialkey = input(f"{Fore.YELLOW}ENTER SERIAL: ")
+secretkey = input(f"{Fore.YELLOW}ENTER SECRET_KEY: ")
+# Initialize colorama to enable colored output on Windows
+init()
 
-print(f"DAW OSINT TOOL\n")
-print(f"Coded by Mohammed Suliman - Instagram: 218XL\n")
+def print_hacker_art():
+    hacker_art = f"""
+{Fore.YELLOW}
+██████         █████           ██     ██ 
+██   ██       ██   ██          ██     ██ 
+██   ██       ███████          ██  █  ██ 
+██   ██       ██   ██          ██ ███ ██ 
+██████        ██   ██           ███ ███                                    
+{Style.RESET_ALL}
+    """
+
+    print(hacker_art)
+
+def main():
+    print_hacker_art()
+    print(f"{Fore.CYAN}Welcome to  {Fore.MAGENTA}DAW Search Tool!{Style.RESET_ALL}")
+    print(f"{Fore.CYAN}TO ACTIVATE TOOL {Fore.MAGENTA}CONTACT: \n    INTSAGRAM: 218XL \n{Fore.GREEN}    FACEBOOK: http://facebook.com/moha7medsuliman{Style.RESET_ALL}")
+    # Your actual Python code goes here
+    time.sleep(1)
+    print(f"{Fore.YELLOW}\nExecuting top-secret operations...{Style.RESET_ALL}")
+
+    # Simulate some code execution
+    for i in range(3):
+        time.sleep(0.5)
+        print(f"{Fore.GREEN}Progress: {i + 1}/3{Style.RESET_ALL}")
+	
+    print(f"{Fore.CYAN}\nOperation complete. .{Style.RESET_ALL}")
+if __name__ == "__main__":
+    main()
+    # MY MAIN CODE
+urllib3.disable_warnings(urllib3.exceptions.InsecureRequestWarning)
 # URL and headers from the request
 url = "https://nec.gov.ly/SRS/SRSSearchForm.aspx"
+
 headers = {
     "Host": "nec.gov.ly",
-    "Cookie": "SRSUserSelectedSchoolId_3097401=UserId=3097401&SchoolId=30974&academicYear=2021&municipalityId=1140&educationAreaId=60001&yearLevel=12&specializationId=1210; ASP.NET_SessionId=yqitkmqcnyqv1vofuixdpf3k; NecSRSCookie001=02995ef437-e61c-41qWQlYpxzo8Wd-3jKv6WmbmyKGUfFMiR9m97IuHp505R_4Y7Vk4z8ObnsWH4p_K5sgZE",
+    "Cookie": "SRSUserSelectedSchoolId_3097401=UserId=3097401&SchoolId=30974&academicYear=2021&municipalityId=1140&educationAreaId=60001&yearLevel=12&specializationId=1210; ASP.NET_SessionId=rt3f0rp3ujowoa5dwhflxmsd; NecSRSCookie001=02995ef437-e61c-417w8wgr2fHAyYdeYK8ZutcP4Z8GfXfhtfbAAGsIDBYPoB5mICAAXQXxe2Xeyl3EzQOmM",
     "Content-Length": "7264",
     "Sec-Ch-Ua": "\"Chromium\";v=\"117\", \"Not;A=Brand\";v=\"8\"",
     "Sec-Ch-Ua-Mobile": "?0",
@@ -30,7 +69,7 @@ headers = {
 }
 
 # User input for first name and full name
-first_name = input("Enter Name: ")
+first_name = input(f"{Fore.RED}Enter Name: ")
 father_name = input("Enter Father name: ")
 grandfather_name = input("Enter Grandfather name: ")
 last_name = input("Enter Last name: ")
@@ -96,4 +135,4 @@ for academic_year in range(2007, 2024):
                 unique_data_rows.add(tuple(data))
                 print("\t".join(data))
     else:
-        print(f"Searching data from year {academic_year}")
+        print(f"{Fore.YELLOW}Searching data from year {academic_year}\n")
