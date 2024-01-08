@@ -6,8 +6,8 @@ from urllib.parse import quote
 import urllib3
 import time
 from colorama import Fore, Style, init
-serialkey = input(f"{Fore.YELLOW}ENTER SERIAL: ")
-secretkey = input(f"{Fore.YELLOW}ENTER SECRET_KEY: ")
+# serialkey = input(f"{Fore.YELLOW}ENTER SERIAL: ")
+# secretkey = input(f"{Fore.YELLOW}ENTER SECRET_KEY: ")
 # Initialize colorama to enable colored output on Windows
 init()
 
