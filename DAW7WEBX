@@ -41,13 +41,14 @@ def main():
 if __name__ == "__main__":
     main()
     # MY MAIN CODE
+
 urllib3.disable_warnings(urllib3.exceptions.InsecureRequestWarning)
 # URL and headers from the request
 url = "https://nec.gov.ly/SRS/SRSSearchForm.aspx"
 
 headers = {
     "Host": "nec.gov.ly",
-    "Cookie": "SRSUserSelectedSchoolId_3097401=UserId=3097401&SchoolId=30974&academicYear=2021&municipalityId=1140&educationAreaId=60001&yearLevel=12&specializationId=1210; ASP.NET_SessionId=rt3f0rp3ujowoa5dwhflxmsd; NecSRSCookie001=02995ef437-e61c-417w8wgr2fHAyYdeYK8ZutcP4Z8GfXfhtfbAAGsIDBYPoB5mICAAXQXxe2Xeyl3EzQOmM",
+    "Cookie": "SRSUserSelectedSchoolId_3097401=UserId=3097401&SchoolId=30974&academicYear=2021&municipalityId=1140&educationAreaId=60001&yearLevel=12&specializationId=1210; ASP.NET_SessionId=u51urulv41on1ktg5x2l2q1o; NecSRSCookie001=02995ef437-e61c-41vDYWnJElUXi1sD80hm1MTLm8OoovvJwoMYBEUG0uSb_aYkXJMTF8y_wj0BYdEGVwMVo",
     "Content-Length": "7264",
     "Sec-Ch-Ua": "\"Chromium\";v=\"117\", \"Not;A=Brand\";v=\"8\"",
     "Sec-Ch-Ua-Mobile": "?0",
@@ -135,4 +136,4 @@ for academic_year in range(2007, 2024):
                 unique_data_rows.add(tuple(data))
                 print("\t".join(data))
     else:
-        print(f"{Fore.YELLOW}Searching data from year {academic_year}\n")
+        print(f"{Fore.YELLOW}Searching data...\n")
