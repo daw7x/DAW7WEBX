@@ -126,10 +126,7 @@ for academic_year in range(2007, 2024):
         if academic_year == 2007:  # Print headers only for the first iteration
             table_headers = [th.text.strip() for th in table.find_all('th', {'scope': 'col'})]
             print("\t".join(table_headers))
-
-     
-	# REVERSE 
-	for row in table.find_all('tr', {'style': 'background-color:#F7F7DE;'}):
+for row in table.find_all('tr', {'style': 'background-color:#F7F7DE;'}):
     data = [td.text.strip() for td in row.find_all('td')]
 
     # Check if the current data row is unique
