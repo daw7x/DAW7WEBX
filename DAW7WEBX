@@ -127,14 +127,7 @@ for academic_year in range(2007, 2024):
             table_headers = [th.text.strip() for th in table.find_all('th', {'scope': 'col'})]
             print("\t".join(table_headers))
 
-        # Extract and print the data rows from the table
-     #    for row in table.find_all('tr', {'style': 'background-color:#F7F7DE;'}):
-          #   data = [td.text.strip() for td in row.find_all('td')]
-
-        #     # Check if the current data row is unique
-          #   if tuple(data) not in unique_data_rows:
-            #     unique_data_rows.add(tuple(data))
-             #    print("\t".join(data))
+     
 	# REVERSE 
 	for row in table.find_all('tr', {'style': 'background-color:#F7F7DE;'}):
     data = [td.text.strip() for td in row.find_all('td')]
