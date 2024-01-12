@@ -48,7 +48,7 @@ url = "https://nec.gov.ly/SRS/SRSSearchForm.aspx"
 
 headers = {
     "Host": "nec.gov.ly",
-    "Cookie": "SRSUserSelectedSchoolId_3097401=UserId=3097401&SchoolId=30974&academicYear=2021&municipalityId=1140&educationAreaId=60001&yearLevel=12&specializationId=1210; ASP.NET_SessionId=s25y2obwj4xk5lvb2iwpsk2f; NecSRSCookie001=02995ef437-e61c-41yuFTdCVTtegIlj7IOfJE28tFTjFz3wfdy_FRvGnLsCwTOqz7BbaB3qv3hoP-jNE3jq4",
+    "Cookie": "SRSUserSelectedSchoolId_3097401=UserId=3097401&SchoolId=30974&academicYear=2021&municipalityId=1140&educationAreaId=60001&yearLevel=12&specializationId=1210; ASP.NET_SessionId=u51urulv41on1ktg5x2l2q1o; NecSRSCookie001=02995ef437-e61c-41vDYWnJElUXi1sD80hm1MTLm8OoovvJwoMYBEUG0uSb_aYkXJMTF8y_wj0BYdEGVwMVo",
     "Content-Length": "7264",
     "Sec-Ch-Ua": "\"Chromium\";v=\"117\", \"Not;A=Brand\";v=\"8\"",
     "Sec-Ch-Ua-Mobile": "?0",
@@ -100,17 +100,19 @@ common_payload = {
     "__ASYNCPOST": "true",
     "ctl00$MainContent$ButtonSearchStart": "%D8%A7%D9%84%D8%A8%D8%AF%D8%A1%20%D9%81%D9%8A%20%D8%A7%D9%84%D8%A8%D8%AD%D8%AB",
 }
+# Initialize a set to store unique data rows
 unique_data_rows = set()
 
+# Loop through academic years from 2007 to 2023
 for academic_year in range(2007, 2024):
     # Update the academic year in the payload
     common_payload["ctl00$MainContent$DropDownListAcademicYear"] = str(academic_year)
 
     # Encode the updated payload to be sent in the request
     encoded_payload = "&".join([f"{key}={value}" for key, value in common_payload.items()])
-
+  
     # Send the request
-    response = requests.post(url, headers=headers, data=encoded_payload)
+    response = requests.post(url, headers=headers, data=encoded_payload, verify=False)
 
     # Parse the HTML content using BeautifulSoup
     soup = BeautifulSoup(response.text, 'html.parser')
@@ -125,7 +127,7 @@ for academic_year in range(2007, 2024):
             table_headers = [th.text.strip() for th in table.find_all('th', {'scope': 'col'})]
             print("\t".join(table_headers))
 
-        # Extract and print the data rows from the table
+         # Extract and print the data rows from the table
         for row in table.find_all('tr', {'style': 'background-color:#F7F7DE;'}):
             data = [td.text.strip() for td in row.find_all('td')]
 
@@ -137,4 +139,4 @@ for academic_year in range(2007, 2024):
                 unique_data_rows.add(tuple(reversed_data))
                 print("\t".join(reversed_data))
     else:
-        print(f"Searching data ...")
+        print(f"{Fore.YELLOW}Searching data...\n")
