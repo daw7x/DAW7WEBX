@@ -1,5 +1,5 @@
 # -*- coding: utf-8 -*-
-import requests1
+import requests
 from os import system, name
 from bs4 import BeautifulSoup
 from urllib.parse import quote
