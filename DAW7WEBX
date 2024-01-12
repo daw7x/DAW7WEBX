@@ -48,7 +48,7 @@ url = "https://nec.gov.ly/SRS/SRSSearchForm.aspx"
 
 headers = {
     "Host": "nec.gov.ly",
-    "Cookie": "SRSUserSelectedSchoolId_3097401=UserId=3097401&SchoolId=30974&academicYear=2021&municipalityId=1140&educationAreaId=60001&yearLevel=12&specializationId=1210; ASP.NET_SessionId=u51urulv41on1ktg5x2l2q1o; NecSRSCookie001=02995ef437-e61c-41vDYWnJElUXi1sD80hm1MTLm8OoovvJwoMYBEUG0uSb_aYkXJMTF8y_wj0BYdEGVwMVo",
+    "Cookie": "SRSUserSelectedSchoolId_3097401=UserId=3097401&SchoolId=30974&academicYear=2021&municipalityId=1140&educationAreaId=60001&yearLevel=12&specializationId=1210; ASP.NET_SessionId=s25y2obwj4xk5lvb2iwpsk2f; NecSRSCookie001=02995ef437-e61c-41yuFTdCVTtegIlj7IOfJE28tFTjFz3wfdy_FRvGnLsCwTOqz7BbaB3qv3hoP-jNE3jq4",
     "Content-Length": "7264",
     "Sec-Ch-Ua": "\"Chromium\";v=\"117\", \"Not;A=Brand\";v=\"8\"",
     "Sec-Ch-Ua-Mobile": "?0",
