@@ -100,6 +100,9 @@ common_payload = {
     "__ASYNCPOST": "true",
     "ctl00$MainContent$ButtonSearchStart": "%D8%A7%D9%84%D8%A8%D8%AF%D8%A1%20%D9%81%D9%8A%20%D8%A7%D9%84%D8%A8%D8%AD%D8%AB",
 }
+# Initialize colorama for colored output
+init()
+
 # Initialize a set to store unique data rows
 unique_data_rows = set()
 
@@ -110,7 +113,7 @@ for academic_year in range(2007, 2024):
 
     # Encode the updated payload to be sent in the request
     encoded_payload = "&".join([f"{key}={value}" for key, value in common_payload.items()])
-  
+
     # Send the request
     response = requests.post(url, headers=headers, data=encoded_payload, verify=False)
 
@@ -127,13 +130,16 @@ for academic_year in range(2007, 2024):
             table_headers = [th.text.strip() for th in table.find_all('th', {'scope': 'col'})]
             print("\t".join(table_headers))
 
-       for row in table.find_all('tr', {'style': 'background-color:#F7F7DE;'}):
-    data = [td.text.strip() for td in row.find_all('td')]
+        # Extract and print the data rows from the table
+        for row in table.find_all('tr', {'style': 'background-color:#F7F7DE;'}):
+            data = [td.text.strip() for td in row.find_all('td')]
 
-    # Check if the current data row is unique
-    if tuple(data) not in unique_data_rows:
-        unique_data_rows.add(tuple(data))
-        reversed_data = [column[::-1] for column in data]  # Reverse each column
-        print("\t".join(reversed_data))
+            # Check if the current data row is unique
+            if tuple(data) not in unique_data_rows:
+                unique_data_rows.add(tuple(data))
+
+                # Display Arabic characters using colorama
+                formatted_data = "\t".join(data)
+                print(f"{Fore.RESET}{formatted_data}")
     else:
         print(f"{Fore.YELLOW}Searching data...\n")
