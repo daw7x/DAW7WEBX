@@ -27,9 +27,9 @@ def print_hacker_art():
 
 def authenticate():
     correct_serialkey = "d7user"
-    correct_secretkey = "d7user"
+    correct_secretkey = "d7xx"
 
-    serialkey = input(f"{Fore.YELLOW}ENTER SERIAL: ")
+    serialkey = input(f"{Fore.YELLOW}ENTER USERNAME: ")
     secretkey = input(f"{Fore.YELLOW}ENTER SECRET_KEY: ")
 
     if serialkey == correct_serialkey and secretkey == correct_secretkey:
