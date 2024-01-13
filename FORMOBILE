@@ -1,0 +1,158 @@
+# -*- coding: utf-8 -*-
+import requests
+from os import system, name
+from bs4 import BeautifulSoup
+from urllib.parse import quote
+import urllib3
+import time
+from colorama import Fore, Style, init
+asp = "11celhnnlrhxhjqu2npszcpi"
+token = "02995ef437-e61c-41_WNgCBCzAJB7XEbf-yZvHWhW3Gsc7QiVss3hnyW48yn2zzjwOAsGi-vMO2P5eApJYHI"
+# Initialize colorama to enable colored output on Windows
+init()
+
+def print_hacker_art():
+    hacker_art = f"""
+
+                  ██████╗ ███████╗
+                  ██╔══██╗╚════██║
+                  ██║  ██║    ██╔╝
+                  ██║  ██║   ██╔╝ 
+                  ██████╔╝   ██║  
+                  ╚═════╝    ╚═╝                                  
+
+    """
+
+    print(hacker_art)
+
+def authenticate():
+    correct_serialkey = "d7user"
+    correct_secretkey = "d7xx"
+
+    serialkey = input(f"     ENTER USERNAME: ")
+    secretkey = input(f"     ENTER SECRET_KEY: ")
+
+    if serialkey == correct_serialkey and secretkey == correct_secretkey:
+        return True
+    else:
+        print(f"     Authentication failed. Exiting...")
+        exit()
+        return False
+
+def main():
+    print_hacker_art()
+
+    if not authenticate():
+        return
+
+    print(f"\n          Welcome to    D7 Search Tool!")
+    print(f"          TO ACTIVATE TOOL           \n          CONTACT: \n              EMAIL: BLACKHATLY@GMAIL.COM \n              TELEGRAM: @D7WEBX")
+
+    time.sleep(1)
+    print(f"\n       Executing top-secret operations...")
+
+    # Simulate some code execution
+    for i in range(3):
+        time.sleep(0.5)
+        print(f"          Progress: {i + 1}/3")
+
+    print(f"\n          Operation complete. .")
+
+if __name__ == "__main__":
+    main()
+    # MY MAIN CODE   i need from user enter password to run code
+urllib3.disable_warnings(urllib3.exceptions.InsecureRequestWarning)
+# URL and headers from the request
+url = "https://nec.gov.ly/SRS/SRSSearchForm.aspx"
+
+headers = {
+    "Host": "nec.gov.ly",
+    "Cookie": f"SRSUserSelectedSchoolId_3097401=UserId=3097401&SchoolId=30974&academicYear=2021&municipalityId=1140&educationAreaId=60001&yearLevel=12&specializationId=1210; ASP.NET_SessionId={asp}; NecSRSCookie001={token}",
+    "Content-Length": "7264",
+    "Sec-Ch-Ua": "\"Chromium\";v=\"117\", \"Not;A=Brand\";v=\"8\"",
+    "Sec-Ch-Ua-Mobile": "?0",
+    "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/117.0.5938.132 Safari/537.36",
+    "Content-Type": "application/x-www-form-urlencoded; charset=UTF-8",
+    "Cache-Control": "no-cache",
+    "X-Requested-With": "XMLHttpRequest",
+    "X-Microsoftajax": "Delta=true",
+    "Sec-Ch-Ua-Platform": "\"Linux\"",
+    "Accept": "*/*",
+    "Origin": "https://nec.gov.ly",
+    "Sec-Fetch-Site": "same-origin",
+    "Sec-Fetch-Mode": "cors",
+    "Sec-Fetch-Dest": "empty",
+    "Referer": "https://nec.gov.ly/SRS/SRSSearchForm.aspx",
+    "Accept-Encoding": "gzip, deflate, br",
+    "Accept-Language": "en-US,en;q=0.9",
+    "Connection": "close"
+}
+
+# User input for first name and full name
+first_name = input(f"\t \t  Enter Name: ")
+father_name = input("\t \t  Enter Father name: ")
+grandfather_name = input("\t \t  Enter Grandfather name: ")
+last_name = input("\t\t  Enter Last name: ")
+
+# Encode the Arabic text
+encoded_first_name = quote(first_name, safe='')
+encoded_father_name = quote(father_name, safe='')
+encoded_grandfather_name = quote(grandfather_name, safe='')
+encoded_last_name = quote(last_name, safe='')
+
+# Construct the common payload with the provided user input
+common_payload = {
+    "ctl00$ScriptManager1": "ctl00$MainContent$UpdatePanelMain|ctl00$MainContent$ButtonSearchStart",
+    "ctl00$MainContent$DropDownListSearchType": "3",
+    "ctl00$MainContent$TextBoxNationalId": "",
+    "ctl00$MainContent$TextBoxStudentExamineeId": "",
+    "ctl00$MainContent$TextBoxFirstName": encoded_first_name,
+    "ctl00$MainContent$TextBoxFathersName": encoded_father_name,
+    "ctl00$MainContent$TextBoxGrandFathersName": encoded_grandfather_name,
+    "ctl00$MainContent$TextBoxLastName": encoded_last_name,
+    "__EVENTTARGET": "ctl00%24MainContent%24DropDownListSearchType",
+    "__EVENTARGUMENT": "",
+    "__LASTFOCUS": "",
+    "__VIEWSTATE": "%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%2FYp9iz2YUg2KfZhNin2YVkZAIHDw8WAh8DBRnYqtin2LHZitiuINin2YTZhdmK2YTYp9ivZGQCCA8PFgIfAwUb2KfZhNmF2YbYt9mC2Kkv2KfZhNmF2YPYqtioZGQCCQ8PFgIfAwUO2KfZhNmF2K%2FYsdiz2KlkZAIKDw8WAh8DBRvYp9mE2YXYs9iq2YjZiSAvINin2YTZgtiz2YVkZAILDw8WAh8DBRHYtdmB2Kkg2KfZhNmC2YrYr2RkAgwPDxYCHwMFDtin2YTYrNmG2LPZitipZGQCDQ8PFgQfAwU12KfZhNmF2YbYt9mC2Kkv2KfZhNmF2YPYqtioINin2YTZhtin2LLYrSDYpdmE2YrZh9mF2KcfAGhkZAIODw8WBB8DBSbYp9mE2YXYr9ix2LPYqSDYp9mE2YbYp9iy2K0g2KXZhNmK2YfYpx8AaGRkAg8PDxYCHwBoZGQCAQ8PZBYGHgtvbm1vdXNlb3ZlcgVwdGhpcy5wcmV2aW91c19jb2xvcj10aGlzLnN0eWxlLmJhY2tncm91bmRDb2xvcjt0aGlzLnN0eWxlLmJhY2tncm91bmRDb2xvcj0nI0ZGQ0MzMyc7dGhpcy5zdHlsZS5jdXJzb3I9J3BvaW50ZXInOx4Kb25tb3VzZW91dAUvdGhpcy5zdHlsZS5iYWNrZ3JvdW5kQ29sb3I9dGhpcy5wcmV2aW91c19jb2xvcjseB29uY2xpY2sFT2phdmFzY3JpcHQ6X19kb1Bvc3RCYWNrKCdjdGwwMCRNYWluQ29udGVudCRHcmlkVmlld1N0dWRlbnRNYWluSW5mbycsJ1NlbGVjdCQwJykWIGYPZBYCZg8PFgIfA2VkZAIBDw8WAh8DBQYmbmJzcDtkZAICDw8WAh8DBQYmbmJzcDtkZAIDDw8WAh8DBQYmbmJzcDtkZAIEDw8WAh8DBQYmbmJzcDtkZAIFDw8WAh8DBQYmbmJzcDtkZAIGDw8WAh8DBQYmbmJzcDtkZAIHDw8WAh8DBQYmbmJzcDtkZAIIDw8WAh8DBQYmbmJzcDtkZAIJDw8WAh8DBQYmbmJzcDtkZAIKDw8WAh8DBQYmbmJzcDtkZAILDw8WAh8DBQYmbmJzcDtkZAIMDw8WAh8DBQYmbmJzcDtkZAINDw8WBB8DBQYmbmJzcDsfAGhkZAIODw8WBB8DBQYmbmJzcDsfAGhkZAIPDw8WBB8DBQYmbmJzcDsfAGhkZAICDw8WAh8AaGQWBgINDw8WAh8AaGRkAg4PDxYCHwBoZGQCDw8PFgIfAGhkZAIPDxYCHwMFqgEg2KrZhtmB2YrYsCDYtNix2YPYqSDYp9mE2LTYp9i32KYg2YTZhti42YUg2KfZhNmF2LnZhNmI2YXYp9iqfCDYrNmF2YrYuSDYp9mE2K3ZgtmI2YIg2YXYrdmB2YjYuNipINmE2LTYsdmD2Kkg2KfZhNi02KfYt9imINmE2YbYuNmFINin2YTZhdi52YTZiNmF2KfYqiDCqSAyMDE4IC0gMjAyMyB8ICgxKWQYAQUpY3RsMDAkTWFpbkNvbnRlbnQkR3JpZFZpZXdTdHVkZW50TWFpbkluZm8PPCsADAMGFQIJc3R1ZGVudElkDVBhc3NGYWlsSW5kZXgHFCsAARQrAAJlMmYAAQAAAP%2F%2F%2F%2F8BAAAAAAAAAAQBAAAAH1N5c3RlbS5Vbml0eVNlcmlhbGl6YXRpb25Ib2xkZXIDAAAABERhdGEJVW5pdHlUeXBlDEFzc2VtYmx5TmFtZQEAAQgKAgAAAAYCAAAAAAsIAgFkydUkUGw8vX1%2BsTHX03a8xeO%2BclEcrWuUwqWAT7WTl%2Bg%3D",
+    "__VIEWSTATEGENERATOR": "B2E6B8BC",
+    "__EVENTVALIDATION": "%2FwEdACQK2QgVPZXJ48A4qM6%2BkA6cfUXBT0BugJMfNQv9QNjhEHZ3QAArd3AfAyyhCtm%2F8TeRq8ujeu4H7JOTViUhG9fBHYVuYahGtQ1efJTCNpGM2gMrnnHQHs%2F1tKW5mZjsDQo7NPWwGq4ozz7ZB65qXFgAFnpJ0RP2WA2abFmP%2FosjPp4jsQE95pWOCIdYe87gMeA8sfHhU8pZe7xl8gB6ryLO%2BeyDu2vjLZIwcym19oWggVmrOWw%2Bpue1fTgLaE9rozGr8nyT39kMOcOfe5ZV5eP79mAWukwAT%2FNTyRbN8wsTO5KQusKNTyLIktci9O%2B%2FG08%2BCcwBeBpRmZoXLGGVy4gsrX%2F9t9VHLMd6hS9UQxwZORu9T%2Bz5yZ41ajcDdELUCPCY5TgAalb8DuphtUR%2BsdGkdH9xfNVDzHGP8JJ28jStfxKUPRNVmeJBtQasnrO3r6TC2o4W3K0Cy7xO%2BK48ny7SogsLbUgkTeUn428Gz4aI2OOQ5vPT7W5fHAkRwgsKeqsPsiLBTJMzHCVkfU%2F9YxzvXx%2FSnHedMMXrbENmn6A%2BIzH5wBgJAm1%2FA%2BRR3J5gzbu5OJ3LXWN%2BfzV2Hd%2BpIYikO3whouExlzxKcjjsQ1i0PCJX88l%2FWk%2Bq6kuDpDt7CeV2k4ym%2BNjSGh03D85%2BiQ6iX7K7gWMT%2BPEIlhkOp38XY7Jhk83bRcWucYwVxyKD%2FtesXAQv%2FJSDRTqZ5sMz4G1Bj1Km8vflWtRbmKY8WDo4W%2FGnyj%2B60gHHku1i9JqIRLG1oQyVlnG%2FkMY9skFW8KJy043ZPs%2Bh7F2kaQHuaWDHdQ%3D%3D",
+    "__ASYNCPOST": "true",
+    "ctl00$MainContent$ButtonSearchStart": "%D8%A7%D9%84%D8%A8%D8%AF%D8%A1%20%D9%81%D9%8A%20%D8%A7%D9%84%D8%A8%D8%AD%D8%AB",
+}
+# Initialize a set to store unique data rows
+unique_data_rows = set()
+
+# Loop through academic years from 2007 to 2023
+for academic_year in range(2007, 2024):
+    # Update the academic year in the payload
+    common_payload["ctl00$MainContent$DropDownListAcademicYear"] = str(academic_year)
+
+    # Encode the updated payload to be sent in the request
+    encoded_payload = "&".join([f"{key}={value}" for key, value in common_payload.items()])
+
+    # Send the request
+    response = requests.post(url, headers=headers, data=encoded_payload, verify=False)
+
+    # Parse the HTML content using BeautifulSoup
+    soup = BeautifulSoup(response.text, 'html.parser')
+
+    # Find the table containing the desired data
+    table = soup.find('table', {'id': 'ctl00_MainContent_GridViewStudentMainInfo'})
+
+    # Check if the table is found
+    if table is not None:
+        # Print the headers of the table
+        if academic_year == 2007:  # Print headers only for the first iteration
+            table_headers = [th.text.strip() for th in table.find_all('th', {'scope': 'col'})]
+            print("\t".join(table_headers))
+
+        # Extract and print the data rows from the table
+        for row in table.find_all('tr', {'style': 'background-color:#F7F7DE;'}):
+            data = [td.text.strip() for td in row.find_all('td')]
+
+            # Check if the current data row is unique
+            if tuple(data) not in unique_data_rows:
+                unique_data_rows.add(tuple(data))
+                print("\t".join(data))
+    else:
+        print(f"\t                     \tSearching data...\n")
