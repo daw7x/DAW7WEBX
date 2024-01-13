@@ -115,7 +115,7 @@ headers = {
 first_name = input(f"{Fore.RED}\t \t  Enter Name: ")
 father_name = input("\t \t  Enter Father name: ")
 grandfather_name = input("\t \t  Enter Grandfather name: ")
-last_name = input("\t\t  Enter Last name: ")
+last_name = input("\t\t  Enter Surname: ")
 
 # Encode the Arabic text
 encoded_first_name = quote(first_name, safe='')
