@@ -36,8 +36,9 @@ def authenticate():
         return True
     else:
         print(f"{Fore.RED}Authentication failed. Exiting...{Style.RESET_ALL}")
-        return False
         exit()
+        return False
+        
 def main():
     print_hacker_art()
 
