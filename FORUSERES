@@ -155,4 +155,4 @@ for academic_year in range(2007, 2024):
                 unique_data_rows.add(tuple(data))
                 print("\t".join(data))
     else:
-        print(f"{Fore.YELLOW}           Searching data...\n")
+        print(f"{Fore.YELLOW}\t                     \tSearching data...\n")
