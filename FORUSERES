@@ -27,9 +27,9 @@ def print_hacker_art():
 
 def authenticate():
   users = [
-      {"username": "1", "secretkey": "1"},
-      {"username": "user2", "secretkey": "pass2"},
-      {"username": "user3", "secretkey": "pass3"},
+      {"username": "daw", "secretkey": "daw7xa"},
+      {"username": "trhoni", "secretkey": "trhoni"},
+      {"username": "gamodi", "secretkey": "gamodi"},
       # Add more users as needed
   ]
 
