@@ -6,50 +6,68 @@ from urllib.parse import quote
 import urllib3
 import time
 from colorama import Fore, Style, init
-# serialkey = input(f"{Fore.YELLOW}ENTER SERIAL: ")
-# secretkey = input(f"{Fore.YELLOW}ENTER SECRET_KEY: ")
+asp = "11celhnnlrhxhjqu2npszcpi"
+token = "02995ef437-e61c-41_WNgCBCzAJB7XEbf-yZvHWhW3Gsc7QiVss3hnyW48yn2zzjwOAsGi-vMO2P5eApJYHI"
 # Initialize colorama to enable colored output on Windows
 init()
 
 def print_hacker_art():
     hacker_art = f"""
 {Fore.YELLOW}
-██████╗ ███████╗
-██╔══██╗╚════██║
-██║  ██║    ██╔╝
-██║  ██║   ██╔╝ 
-██████╔╝   ██║  
-╚═════╝    ╚═╝                                
+                  ██████╗ ███████╗
+                  ██╔══██╗╚════██║
+                  ██║  ██║    ██╔╝
+                  ██║  ██║   ██╔╝ 
+                  ██████╔╝   ██║  
+                  ╚═════╝    ╚═╝                                  
 {Style.RESET_ALL}
     """
 
     print(hacker_art)
 
+def authenticate():
+    correct_serialkey = "d7user"
+    correct_secretkey = "d7xx"
+
+    serialkey = input(f"{Fore.YELLOW}     ENTER USERNAME: ")
+    secretkey = input(f"{Fore.YELLOW}     ENTER SECRET_KEY: ")
+
+    if serialkey == correct_serialkey and secretkey == correct_secretkey:
+        return True
+    else:
+        print(f"{Fore.RED}     Authentication failed. Exiting...{Style.RESET_ALL}")
+        exit()
+        return False
+
 def main():
     print_hacker_art()
-    print(f"{Fore.CYAN}Welcome to  {Fore.MAGENTA}DAW Search Tool!{Style.RESET_ALL}")
-    print(f"{Fore.CYAN}TO ACTIVATE TOOL {Fore.MAGENTA}CONTACT: \n    INTSAGRAM: 218XL \n{Fore.GREEN}    FACEBOOK: http://facebook.com/moha7medsuliman{Style.RESET_ALL}")
-    # Your actual Python code goes here
+
+    if not authenticate():
+        return
+
+    print(f"{Fore.CYAN}\n          Welcome to  {Fore.MAGENTA}  D7 Search Tool!{Style.RESET_ALL}")
+    print(f"{Fore.CYAN}          TO ACTIVATE TOOL {Fore.MAGENTA}          \n          CONTACT: \n              EMAIL: BLACKHATLY@GMAIL.COM \n{Fore.GREEN}              TELEGRAM: @D7WEBX{Style.RESET_ALL}")
+
     time.sleep(1)
-    print(f"{Fore.YELLOW}\nExecuting top-secret operations...{Style.RESET_ALL}")
+    print(f"{Fore.YELLOW}\n       Executing top-secret operations...{Style.RESET_ALL}")
 
     # Simulate some code execution
     for i in range(3):
         time.sleep(0.5)
-        print(f"{Fore.GREEN}Progress: {i + 1}/3{Style.RESET_ALL}")
-	
-    print(f"{Fore.CYAN}\nOperation complete. .{Style.RESET_ALL}")
+        print(f"{Fore.GREEN}          Progress: {i + 1}/3{Style.RESET_ALL}")
+
+    print(f"{Fore.CYAN}\n          Operation complete. .{Style.RESET_ALL}")
+
 if __name__ == "__main__":
     main()
-    # MY MAIN CODE
-
+    # MY MAIN CODE   i need from user enter password to run code
 urllib3.disable_warnings(urllib3.exceptions.InsecureRequestWarning)
 # URL and headers from the request
 url = "https://nec.gov.ly/SRS/SRSSearchForm.aspx"
 
 headers = {
     "Host": "nec.gov.ly",
-    "Cookie": "SRSUserSelectedSchoolId_3097401=UserId=3097401&SchoolId=30974&academicYear=2021&municipalityId=1140&educationAreaId=60001&yearLevel=12&specializationId=1210; ASP.NET_SessionId=atsjpeqz53ya2bqekjdsbqsg; NecSRSCookie001=02995ef437-e61c-41V--AQodMk-_xajAd5uSo56qb9ZyLH8wDo822gsmGIowF5UKcelCZBXncbEaIVhrU8I4",
+    "Cookie": f"SRSUserSelectedSchoolId_3097401=UserId=3097401&SchoolId=30974&academicYear=2021&municipalityId=1140&educationAreaId=60001&yearLevel=12&specializationId=1210; ASP.NET_SessionId={asp}; NecSRSCookie001={token}",
     "Content-Length": "7264",
     "Sec-Ch-Ua": "\"Chromium\";v=\"117\", \"Not;A=Brand\";v=\"8\"",
     "Sec-Ch-Ua-Mobile": "?0",
@@ -71,10 +89,10 @@ headers = {
 }
 
 # User input for first name and full name
-first_name = input(f"{Fore.RED}Enter Name: ")
-father_name = input("Enter Father name: ")
-grandfather_name = input("Enter Grandfather name: ")
-last_name = input("Enter Last name: ")
+first_name = input(f"{Fore.RED}\t \t  Enter Name: ")
+father_name = input("\t \t  Enter Father name: ")
+grandfather_name = input("\t \t  Enter Grandfather name: ")
+last_name = input("\t\t  Enter Last name: ")
 
 # Encode the Arabic text
 encoded_first_name = quote(first_name, safe='')
@@ -111,7 +129,7 @@ for academic_year in range(2007, 2024):
 
     # Encode the updated payload to be sent in the request
     encoded_payload = "&".join([f"{key}={value}" for key, value in common_payload.items()])
-  
+
     # Send the request
     response = requests.post(url, headers=headers, data=encoded_payload, verify=False)
 
@@ -128,16 +146,13 @@ for academic_year in range(2007, 2024):
             table_headers = [th.text.strip() for th in table.find_all('th', {'scope': 'col'})]
             print("\t".join(table_headers))
 
-         # Extract and print the data rows from the table
+        # Extract and print the data rows from the table
         for row in table.find_all('tr', {'style': 'background-color:#F7F7DE;'}):
             data = [td.text.strip() for td in row.find_all('td')]
 
-            # Reverse Arabic text in each cell
-            reversed_data = [cell[::-1] if any('\u0600' <= c <= '\u06FF' for c in cell) else cell for cell in data]
-
             # Check if the current data row is unique
-            if tuple(reversed_data) not in unique_data_rows:
-                unique_data_rows.add(tuple(reversed_data))
-                print("\t".join(reversed_data))
+            if tuple(data) not in unique_data_rows:
+                unique_data_rows.add(tuple(data))
+                print("\t".join(data))
     else:
-        print(f"{Fore.YELLOW}Searching data...\n")
+        print(f"{Fore.YELLOW}\t                     \tSearching data...\n")
