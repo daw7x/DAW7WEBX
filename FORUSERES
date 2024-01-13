@@ -6,7 +6,8 @@ from urllib.parse import quote
 import urllib3
 import time
 from colorama import Fore, Style, init
-
+asp = "11celhnnlrhxhjqu2npszcpi"
+token = "02995ef437-e61c-41_WNgCBCzAJB7XEbf-yZvHWhW3Gsc7QiVss3hnyW48yn2zzjwOAsGi-vMO2P5eApJYHI"
 # Initialize colorama to enable colored output on Windows
 init()
 
@@ -65,7 +66,7 @@ url = "https://nec.gov.ly/SRS/SRSSearchForm.aspx"
 
 headers = {
     "Host": "nec.gov.ly",
-    "Cookie": f"SRSUserSelectedSchoolId_3097401=UserId=3097401&SchoolId=30974&academicYear=2021&municipalityId=1140&educationAreaId=60001&yearLevel=12&specializationId=1210; ASP.NET_SessionId={serialkey}; NecSRSCookie001={secretkey}",
+    "Cookie": "SRSUserSelectedSchoolId_3097401=UserId=3097401&SchoolId=30974&academicYear=2021&municipalityId=1140&educationAreaId=60001&yearLevel=12&specializationId=1210; ASP.NET_SessionId={asp}; NecSRSCookie001={token}",
     "Content-Length": "7264",
     "Sec-Ch-Ua": "\"Chromium\";v=\"117\", \"Not;A=Brand\";v=\"8\"",
     "Sec-Ch-Ua-Mobile": "?0",
