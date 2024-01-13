@@ -26,25 +26,31 @@ def print_hacker_art():
     print(hacker_art)
 
 def authenticate():
-    correct_serialkey = "d7user"
-    correct_secretkey = "d7xx"
+  users = [
+      {"username": "1", "secretkey": "1"},
+      {"username": "user2", "secretkey": "pass2"},
+      {"username": "user3", "secretkey": "pass3"},
+      # Add more users as needed
+  ]
 
-    serialkey = input(f"{Fore.YELLOW}     ENTER USERNAME: ")
-    secretkey = input(f"{Fore.YELLOW}     ENTER SECRET_KEY: ")
+  username = input(f"{Fore.YELLOW}     ENTER USERNAME: ")
+  secretkey = input(f"{Fore.YELLOW}     ENTER SECRET_KEY: ")
 
-    if serialkey == correct_serialkey and secretkey == correct_secretkey:
-        return True
-    else:
-        print(f"{Fore.RED}     Authentication failed. Exiting...{Style.RESET_ALL}")
-        exit()
-        return False
+  for user in users:
+      if username == user["username"] and secretkey == user["secretkey"]:
+          return True
 
+  print(f"{Fore.RED}     Authentication failed. Exiting...{Style.RESET_ALL}")
+  exit()
+  return False
+
+  
 def main():
     print_hacker_art()
 
     if not authenticate():
         return
-
+    print(f"{Fore.GREEN}     Authentication successful. {Style.RESET_ALL}")
     print(f"{Fore.CYAN}\n          Welcome to  {Fore.MAGENTA}  D7 Search Tool!{Style.RESET_ALL}")
     print(f"{Fore.CYAN}          TO ACTIVATE TOOL {Fore.MAGENTA}          \n          CONTACT: \n              EMAIL: BLACKHATLY@GMAIL.COM \n{Fore.GREEN}              TELEGRAM: @D7WEBX{Style.RESET_ALL}")
 
