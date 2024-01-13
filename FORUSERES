@@ -14,11 +14,12 @@ init()
 def print_hacker_art():
     hacker_art = f"""
 {Fore.YELLOW}
-██████         █████           ██     ██ 
-██   ██       ██   ██          ██     ██ 
-██   ██       ███████          ██  █  ██ 
-██   ██       ██   ██          ██ ███ ██ 
-██████        ██   ██           ███ ███                                    
+██████╗ ███████╗
+██╔══██╗╚════██║
+██║  ██║    ██╔╝
+██║  ██║   ██╔╝ 
+██████╔╝   ██║  
+╚═════╝    ╚═╝                                  
 {Style.RESET_ALL}
     """
 
@@ -27,7 +28,7 @@ def print_hacker_art():
 def main():
     print_hacker_art()
     print(f"{Fore.CYAN}Welcome to  {Fore.MAGENTA}DAW Search Tool!{Style.RESET_ALL}")
-    print(f"{Fore.CYAN}TO ACTIVATE TOOL {Fore.MAGENTA}CONTACT: \n    INTSAGRAM: 218XL \n{Fore.GREEN}    FACEBOOK: http://facebook.com/moha7medsuliman{Style.RESET_ALL}")
+    print(f"{Fore.CYAN}TO ACTIVATE TOOL {Fore.MAGENTA}CONTACT: \n    INTSAGRAM: @ \n{Fore.GREEN}    TELEGRAM: @D7WEBX{Style.RESET_ALL}")
     # Your actual Python code goes here
     time.sleep(1)
     print(f"{Fore.YELLOW}\nExecuting top-secret operations...{Style.RESET_ALL}")
