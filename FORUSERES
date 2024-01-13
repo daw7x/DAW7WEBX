@@ -26,8 +26,8 @@ def print_hacker_art():
     print(hacker_art)
 
 def authenticate():
-    correct_serialkey = "daw"
-    correct_secretkey = "daw"
+    correct_serialkey = "d7user"
+    correct_secretkey = "d7user"
 
     serialkey = input(f"{Fore.YELLOW}ENTER SERIAL: ")
     secretkey = input(f"{Fore.YELLOW}ENTER SECRET_KEY: ")
@@ -40,13 +40,13 @@ def authenticate():
 
 def main():
     print_hacker_art()
-    
+
     if not authenticate():
         return
 
     print(f"{Fore.CYAN}Welcome to  {Fore.MAGENTA}DAW Search Tool!{Style.RESET_ALL}")
     print(f"{Fore.CYAN}TO ACTIVATE TOOL {Fore.MAGENTA}CONTACT: \n    INTSAGRAM: @ \n{Fore.GREEN}    TELEGRAM: @D7WEBX{Style.RESET_ALL}")
-    
+
     time.sleep(1)
     print(f"{Fore.YELLOW}\nExecuting top-secret operations...{Style.RESET_ALL}")
 
@@ -54,7 +54,7 @@ def main():
     for i in range(3):
         time.sleep(0.5)
         print(f"{Fore.GREEN}Progress: {i + 1}/3{Style.RESET_ALL}")
-    
+
     print(f"{Fore.CYAN}\nOperation complete. .{Style.RESET_ALL}")
 
 if __name__ == "__main__":
@@ -66,7 +66,7 @@ url = "https://nec.gov.ly/SRS/SRSSearchForm.aspx"
 
 headers = {
     "Host": "nec.gov.ly",
-    "Cookie": "SRSUserSelectedSchoolId_3097401=UserId=3097401&SchoolId=30974&academicYear=2021&municipalityId=1140&educationAreaId=60001&yearLevel=12&specializationId=1210; ASP.NET_SessionId={asp}; NecSRSCookie001={token}",
+    "Cookie": f"SRSUserSelectedSchoolId_3097401=UserId=3097401&SchoolId=30974&academicYear=2021&municipalityId=1140&educationAreaId=60001&yearLevel=12&specializationId=1210; ASP.NET_SessionId={asp}; NecSRSCookie001={token}",
     "Content-Length": "7264",
     "Sec-Ch-Ua": "\"Chromium\";v=\"117\", \"Not;A=Brand\";v=\"8\"",
     "Sec-Ch-Ua-Mobile": "?0",
@@ -128,7 +128,7 @@ for academic_year in range(2007, 2024):
 
     # Encode the updated payload to be sent in the request
     encoded_payload = "&".join([f"{key}={value}" for key, value in common_payload.items()])
-  
+
     # Send the request
     response = requests.post(url, headers=headers, data=encoded_payload, verify=False)
 
