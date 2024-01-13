@@ -35,7 +35,7 @@ def authenticate():
     if serialkey == correct_serialkey and secretkey == correct_secretkey:
         return True
     else:
-        print(f"{Fore.RED}Authentication failed. Exiting...{Style.RESET_ALL}")
+        print(f"{Fore.RED}     Authentication failed. Exiting...{Style.RESET_ALL}")
         exit()
         return False
 
@@ -45,18 +45,18 @@ def main():
     if not authenticate():
         return
 
-    print(f"{Fore.CYAN}Welcome to  {Fore.MAGENTA}DAW Search Tool!{Style.RESET_ALL}")
-    print(f"{Fore.CYAN}TO ACTIVATE TOOL {Fore.MAGENTA}CONTACT: \n    INTSAGRAM: @ \n{Fore.GREEN}    TELEGRAM: @D7WEBX{Style.RESET_ALL}")
+    print(f"{Fore.CYAN}\n          Welcome to  {Fore.MAGENTA}     D7 Search Tool!{Style.RESET_ALL}")
+    print(f"{Fore.CYAN}          TO ACTIVATE TOOL {Fore.MAGENTA}          \n          CONTACT: \n              EMAIL: BLACKHATLY@GMAIL.COM \n{Fore.GREEN}              TELEGRAM: @D7WEBX{Style.RESET_ALL}")
 
     time.sleep(1)
-    print(f"{Fore.YELLOW}\nExecuting top-secret operations...{Style.RESET_ALL}")
+    print(f"{Fore.YELLOW}\n     Executing top-secret operations...{Style.RESET_ALL}")
 
     # Simulate some code execution
     for i in range(3):
         time.sleep(0.5)
-        print(f"{Fore.GREEN}Progress: {i + 1}/3{Style.RESET_ALL}")
+        print(f"{Fore.GREEN}                    Progress: {i + 1}/3{Style.RESET_ALL}")
 
-    print(f"{Fore.CYAN}\nOperation complete. .{Style.RESET_ALL}")
+    print(f"{Fore.CYAN}\n          Operation complete. .{Style.RESET_ALL}")
 
 if __name__ == "__main__":
     main()
@@ -89,10 +89,10 @@ headers = {
 }
 
 # User input for first name and full name
-first_name = input(f"{Fore.RED}Enter Name: ")
-father_name = input("Enter Father name: ")
-grandfather_name = input("Enter Grandfather name: ")
-last_name = input("Enter Last name: ")
+first_name = input(f"{Fore.RED}\t \tEnter Name: ")
+father_name = input("\t \tEnter Father name: ")
+grandfather_name = input("\t \tEnter Grandfather name: ")
+last_name = input("\t\tEnter Last name: ")
 
 # Encode the Arabic text
 encoded_first_name = quote(first_name, safe='')
